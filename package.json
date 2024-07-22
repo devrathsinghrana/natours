@@ -1,0 +1,14 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "LP natours",
+  "main": "index.js",
+  "scripts": {
+    "compile:scss": "sass sass/main.scss css/style.css -w"
+  },
+  "author": "devrath",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.6"
+  }
+}

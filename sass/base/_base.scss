@@ -1,0 +1,26 @@
+/* 
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+ */
+
+/* Reset css */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    font-size: 62.5%; /* this will set root element html font size to 10px so whenever we use rem this will make 1 rem same as 10px. This will also reduce code as we can just use media queries here and set different font size for rem unit which can increase and decrease font-siz accordingly wherever rem is used as unit.*/
+  }
+  
+  /* highest level css properties which will be inherited throughout the page */
+  body {
+    box-sizing: border-box;
+  }
