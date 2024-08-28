@@ -1,0 +1,64 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white,.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+  transform: skewX(-12deg);
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left; //to make rest of the content float around it
+
+    //we can use polygon also just like in clip-path
+    // circle(50%) -first input is radius of circle which means it will be 50% of height or width of element
+    // at 50% 50% is horizontally and vertically it is centre
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+  &__img {
+    height: 100%;
+    transform: translate(-4rem) scale(1.4);
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%); //initial state before hover
+    font-size: 1.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+    opacity: 0; //initial state before hover
+    transition: all 0.5s;
+    backface-visibility: hidden; //remove slight glitch or jerk on hover animation. important property for handling issues due to animating stuff
+  }
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover img {
+    transform: translate(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); //brightness - value>100% is brighter and value<100% is darker
+  }
+}

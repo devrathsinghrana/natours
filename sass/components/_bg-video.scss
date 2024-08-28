@@ -1,0 +1,18 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //below dimensions still make video overflow so we use object fit and set dimensions directly to video element. if we don't use object fit then to maintain aspect ratio of video height is reduced so object fit -> cover maintains both.
+  height: 100%;
+  width: 100%;
+  opacity: 0.15;
+  z-index: -1;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    // cover fills the whole parent space but also maintain aspect ratio but normal fill will not maintain aspect ratio
+    object-fit: cover;//it works on html elements unlike background-size property 
+  }
+}
