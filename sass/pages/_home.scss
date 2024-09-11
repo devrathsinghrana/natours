@@ -53,3 +53,34 @@
   padding: 15rem 0;
   position: relative;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.book {
+  //How to make clipped designs using linear-gradient without clip-path
+  //105deg means gradient direction from top left to bottom right. 0% means color at 0% width and 50% means color at 50% width making white and transparent 50% gives end width of white color and star width of transparent.
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url("../img/nat-10.jpg");
+  background-size: 100%; //is 100% of width works same as cover
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  height: 50rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

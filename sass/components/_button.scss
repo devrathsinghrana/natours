@@ -1,4 +1,6 @@
 .btn {
+  &,//this will allow below css to apply to button element also
+  //below css not applied to button element like anchor tag
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -7,12 +9,20 @@
     display: inline-block;
     border-radius: 10rem;
     position: relative;
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
   &:hover {
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
   }
-  &:active {
+  &:active,
+  &:focus {
+    outline: none; //we do not remove focus completely but use this property for accesibility reasons as focus is still there due to below broperties
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
