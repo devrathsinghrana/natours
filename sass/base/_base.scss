@@ -18,25 +18,31 @@ html {
   font-size: 62.5%; /* this will set root element html font size to 10px so whenever we use rem this will make 1 rem same as 10px. This will also reduce code as we can just use media queries here and set different font size for rem unit which can increase and decrease font-siz accordingly wherever rem is used as unit.*/
 
   //we put larger property values over larger property values when writing media queries.
-  //PLEASE THINK ABOUT ORDER OF BELOW MEDIA QUERIES TO GET CLARITY 
-  @include respond(tab-land) {//width<1200?
-    font-size: 56.25%;//1em = 9px, 9/16=.5625
+  //PLEASE THINK ABOUT ORDER OF BELOW MEDIA QUERIES TO GET CLARITY
+  @include respond(tab-land) {
+    //width<1200?
+    font-size: 56.25%; //1em = 9px, 9/16=.5625
   }
 
-  @include respond(tab-port) {//width<900? we want this to override above css
+  @include respond(tab-port) {
+    //width<900? we want this to override above css
 
     // below properties will be passed a content for mixin
-    font-size: 50%;// 1rem = 8px, 8/16=.5
+    font-size: 50%; // 1rem = 8px, 8/16=.5
   }
- 
+
   // Say we have 700px device then we want font-size for 900px media query instead of tab-land one as it is closer to 900 so we write it after tab-land as we follow DESKTOP-FIRST so we need to shrink content but in MOBILE-FIRST the media queries order will be reversed
-  
+
   @include respond(big-desktop) {
-    font-size: 75%;// 1rem = 12px, 12/16=.75
+    font-size: 75%; // 1rem = 12px, 12/16=.75
   }
 }
 
 /* highest level css properties which will be inherited throughout the page */
 body {
   box-sizing: border-box;
+  padding: 3rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
