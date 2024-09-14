@@ -1,3 +1,19 @@
+/*
+0 - 600px: Phone
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+[1200 - 1800] is where our normal style apply as it is DESKTOP-FIRST
+1800px + : Big desktop
+*/
+/*
+Breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER in which we define media queries - Base + typography > general layout + grid > page layout > components
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -50,6 +66,21 @@ Dark green: #28b485
 
 html {
   font-size: 62.5%; /* this will set root element html font size to 10px so whenever we use rem this will make 1 rem same as 10px. This will also reduce code as we can just use media queries here and set different font size for rem unit which can increase and decrease font-siz accordingly wherever rem is used as unit.*/
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
 }
 
 /* highest level css properties which will be inherited throughout the page */
