@@ -33,14 +33,19 @@
     //we can use polygon also just like in clip-path
     // circle(50%) -first input is radius of circle which means it will be 50% of height or width of element
     // at 50% 50% is horizontally and vertically it is centre
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
 
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+    overflow: hidden; //for image overflowing where clip path not applying
+    border-radius: 50%;
 
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
     }
