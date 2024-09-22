@@ -60,9 +60,10 @@
                 <div class="col-1-of-2">
                     <div class="composition">
                         <!-- directly informing about the expected width of the image without waiting for the browser to compute each image details. That's not enough for browser to decide which image to download. -->
-                        <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-                        <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-                        <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                         <!-- 900/16=65.25em, 600/16=36.5em -->
+                        <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width: 65.25em) 20vw, (max-width: 36.5em) 30vw, 300px" src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                        <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width: 65.25em) 20vw, (max-width: 36.5em) 30vw, 300px" src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                        <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width: 65.25em) 20vw, (max-width: 36.5em) 30vw, 300px" src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
 
                         <!-- 
                         <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
