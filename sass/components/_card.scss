@@ -166,7 +166,8 @@
     font-weight: 100;
   }
 
-  @include respond(tab-port) {
+  // @include respond(tab-port) {
+  @media only screen and (max-width: 56.25ewm), only screen and (hover: none) {
     // FUNCTIONALITY
     height: auto;
     border-radius: 3px;
